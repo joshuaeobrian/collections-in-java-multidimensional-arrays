@@ -3,6 +3,7 @@ package com.theironyard;
 import net.doughughes.testifier.exception.CannotAccessMethodException;
 import net.doughughes.testifier.exception.CannotFindMethodException;
 import net.doughughes.testifier.exception.CannotInvokeMethodException;
+import net.doughughes.testifier.exception.MethodIsNotStaticException;
 import net.doughughes.testifier.matcher.RegexMatcher;
 import net.doughughes.testifier.test.TestifierTest;
 import net.doughughes.testifier.util.Invoker;
@@ -22,7 +23,7 @@ public class MatrixKatasTest extends TestifierTest{
         int[][] result = new int[0][];
         try {
             result = (int[][]) Invoker.invokeStatic(MatrixKatas.class, "createProductTable", 3, 5);
-        } catch (CannotFindMethodException | CannotAccessMethodException | CannotInvokeMethodException e) {
+        } catch (MethodIsNotStaticException | CannotFindMethodException | CannotAccessMethodException | CannotInvokeMethodException e) {
             fail(e.getMessage());
         }
 
@@ -43,7 +44,7 @@ public class MatrixKatasTest extends TestifierTest{
         int[][] result = new int[0][];
         try {
             result = (int[][]) Invoker.invokeStatic(MatrixKatas.class, "createProductTable", 3, 4);
-        } catch (CannotFindMethodException | CannotAccessMethodException | CannotInvokeMethodException e) {
+        } catch (MethodIsNotStaticException |CannotFindMethodException | CannotAccessMethodException | CannotInvokeMethodException e) {
             fail(e.getMessage());
         }
 
