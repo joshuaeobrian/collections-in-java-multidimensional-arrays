@@ -51,6 +51,7 @@ public class MatrixKatasTest extends TestifierTest{
         /* assert */
         for(int x = 0 ; x < 3 ; x++){
             for(int y = 0 ; y < 4 ; y++){
+                System.out.println(x+" * "+y+" = "+(x*y));
                 assertThat(x + " * " + y + " should equal " + (x * y),
                         result[x][y], equalTo(x * y));
             }
